@@ -1,69 +1,64 @@
-import { Briefcase, GraduationCap, Calendar } from "lucide-react";
+import { Briefcase, GraduationCap } from "lucide-react";
 
 const experiences = [
   {
     title: "Penetration Testing Intern",
     org: "DEPI",
-    period: "Internship",
-    desc: "Hands-on penetration testing experience, vulnerability assessment and security auditing.",
+    desc: "Hands-on penetration testing, vulnerability assessment and security auditing.",
+    color: "border-l-cyan",
   },
   {
     title: "Junior Pentester",
     org: "CAT Reloaded",
-    period: "Team Member",
-    desc: "Web application security testing, studying OWASP Top 10 vulnerabilities.",
+    desc: "Web application security testing, OWASP Top 10 vulnerability analysis.",
+    color: "border-l-violet",
   },
   {
     title: "Full Stack Web Developer",
     org: "NTI",
-    period: "Training",
     desc: "Full stack web development with PHP, building dynamic web applications.",
+    color: "border-l-rose",
   },
 ];
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 px-4 bg-card/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="font-mono text-primary text-sm">03.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Experience</h2>
+    <section id="experience" className="py-24 px-4 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/30 to-transparent" />
+      <div className="max-w-6xl mx-auto relative">
+        <div className="text-center mb-16">
+          <span className="font-mono text-sm text-primary tracking-widest uppercase">03. Where I've Been</span>
+          <h2 className="text-3xl md:text-5xl font-bold mt-3 gradient-text">Experience</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-4 rounded-full" />
         </div>
-        <div className="w-20 h-0.5 bg-primary mb-12" />
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-border" />
-
-          <div className="space-y-10">
-            {experiences.map((exp, i) => (
-              <div key={i} className="relative pl-12 md:pl-20">
-                {/* Dot */}
-                <div className="absolute left-2.5 md:left-6.5 top-1 w-3 h-3 rounded-full bg-primary border-glow" />
-
-                <div className="p-6 border border-border bg-card rounded-sm card-glow hover:border-primary/50 transition-colors">
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <Briefcase className="w-4 h-4 text-primary" />
-                    <h3 className="font-semibold text-foreground text-lg">{exp.title}</h3>
-                    <span className="font-mono text-xs px-2 py-1 bg-primary/10 text-primary rounded-sm">{exp.period}</span>
-                  </div>
-                  <p className="font-mono text-sm text-primary/70 mb-2">{exp.org}</p>
-                  <p className="text-muted-foreground text-sm">{exp.desc}</p>
-                </div>
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {experiences.map((exp, i) => (
+            <div
+              key={i}
+              className={`p-6 border border-border ${exp.color} border-l-4 bg-card rounded-lg card-hover`}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <Briefcase className="w-4 h-4 text-primary" />
+                <span className="font-mono text-xs text-primary">{exp.org}</span>
               </div>
-            ))}
-          </div>
+              <h3 className="font-semibold text-foreground text-lg mb-2">{exp.title}</h3>
+              <p className="text-muted-foreground text-sm">{exp.desc}</p>
+            </div>
+          ))}
         </div>
 
         {/* Education */}
-        <div className="mt-16">
-          <div className="flex items-center gap-3 mb-8">
-            <GraduationCap className="w-6 h-6 text-primary" />
+        <div className="max-w-2xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <GraduationCap className="w-6 h-6 text-accent" />
             <h3 className="text-2xl font-bold text-foreground">Education</h3>
           </div>
-          <div className="p-6 border border-border bg-card rounded-sm card-glow">
-            <h4 className="font-semibold text-foreground text-lg">Faculty of Computers and Artificial Intelligence</h4>
-            <p className="font-mono text-sm text-primary/70">Beni-Suef University</p>
+          <div className="p-8 border border-border bg-card rounded-lg text-center border-glow-violet">
+            <h4 className="font-semibold text-foreground text-xl mb-2">
+              Faculty of Computers & Artificial Intelligence
+            </h4>
+            <p className="font-mono text-accent">Beni-Suef University</p>
           </div>
         </div>
       </div>
