@@ -57,7 +57,7 @@ const ContactSection = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
             {socials.map((social) => (
               <a
                 key={social.label}
