@@ -1,4 +1,5 @@
 import { Code, Smartphone, Globe, Terminal } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 const projects = [
   {
@@ -8,7 +9,6 @@ const projects = [
     icon: Terminal,
     tags: ["C++", "OOP", "DSA"],
     accent: "text-cyan",
-    borderAccent: "hover:border-cyan/40",
   },
   {
     title: "Bank Queue System",
@@ -17,7 +17,6 @@ const projects = [
     icon: Terminal,
     tags: ["C++", "Queue", "DSA"],
     accent: "text-violet",
-    borderAccent: "hover:border-violet/40",
   },
   {
     title: "Azkar App",
@@ -26,7 +25,6 @@ const projects = [
     icon: Smartphone,
     tags: ["C#", ".NET", "Desktop"],
     accent: "text-emerald",
-    borderAccent: "hover:border-emerald/40",
   },
   {
     title: "XO Game",
@@ -35,7 +33,6 @@ const projects = [
     icon: Code,
     tags: ["C#", "Game", "UI"],
     accent: "text-rose",
-    borderAccent: "hover:border-rose/40",
   },
   {
     title: "Todo List & CRUD",
@@ -44,7 +41,6 @@ const projects = [
     icon: Globe,
     tags: ["HTML", "CSS", "JavaScript"],
     accent: "text-amber",
-    borderAccent: "hover:border-amber/40",
   },
   {
     title: "Note App",
@@ -53,7 +49,6 @@ const projects = [
     icon: Globe,
     tags: ["PHP", "MySQL", "Full Stack"],
     accent: "text-cyan",
-    borderAccent: "hover:border-cyan/40",
   },
 ];
 
@@ -61,34 +56,36 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="font-mono text-sm text-primary tracking-widest uppercase">04. What I've Built</span>
-          <h2 className="text-3xl md:text-5xl font-bold mt-3 gradient-text">Projects</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-4 rounded-full" />
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <span className="font-mono text-sm text-primary tracking-widest uppercase">04. What I've Built</span>
+            <h2 className="text-3xl md:text-5xl font-bold mt-3 gradient-text">Projects</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-4 rounded-full" />
+            <p className="text-muted-foreground text-sm mt-4 font-mono">GitHub links coming soon</p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
-            <div
-              key={i}
-              className={`group p-6 border border-border bg-card rounded-lg card-hover ${project.borderAccent}`}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <project.icon className={`w-8 h-8 ${project.accent}`} />
-                <span className="font-mono text-xs text-muted-foreground bg-secondary px-2 py-1 rounded">{project.tech}</span>
+            <ScrollReveal key={i} delay={i * 80}>
+              <div className="group p-6 border border-border bg-card rounded-lg card-hover h-full">
+                <div className="flex items-center justify-between mb-4">
+                  <project.icon className={`w-8 h-8 ${project.accent}`} />
+                  <span className="font-mono text-xs text-muted-foreground bg-secondary px-2 py-1 rounded">{project.tech}</span>
+                </div>
+                <h3 className="font-semibold text-foreground text-lg mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4">{project.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="font-mono text-xs px-2.5 py-1 bg-secondary text-muted-foreground rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <h3 className={`font-semibold text-foreground text-lg mb-2 group-hover:${project.accent} transition-colors`}>
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">{project.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="font-mono text-xs px-2.5 py-1 bg-secondary text-muted-foreground rounded">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
