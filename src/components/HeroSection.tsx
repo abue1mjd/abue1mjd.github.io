@@ -54,7 +54,7 @@ const HeroSection = () => {
             </div>
 
             <div className="font-mono text-sm text-muted-foreground mb-8 animate-fade-in-up delay-300 bg-card/80 p-3 rounded-lg border border-border inline-block">
-              <span className="text-primary">$</span> nmap -sV --script vuln <span className="text-accent">target</span>
+              <span className="text-primary">$</span> whoami
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center md:justify-start animate-fade-in-up delay-400">
