@@ -1,6 +1,7 @@
-import { Shield, Terminal, ChevronDown } from "lucide-react";
+import { Shield, Terminal, ChevronDown, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import profilePhoto from "@/assets/profile-photo.png";
+import TypingEffect from "./TypingEffect";
 
 const HeroSection = () => {
   return (
@@ -43,28 +44,36 @@ const HeroSection = () => {
               <span className="text-foreground">Mohamed</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-lg animate-fade-in-up delay-200">
-              Breaking systems to make them stronger. Junior Pentester & Full Stack Developer passionate about cybersecurity.
-            </p>
+            <div className="text-lg md:text-xl text-muted-foreground mb-6 max-w-lg animate-fade-in-up delay-200 h-14 md:h-8">
+              <TypingEffect
+                texts={[
+                  "Junior Penetration Tester",
+                  "Bug Bounty Hunter",
+                  "Full Stack Developer",
+                  "Cybersecurity Researcher",
+                ]}
+              />
+            </div>
 
             <div className="font-mono text-sm text-muted-foreground mb-8 animate-fade-in-up delay-300 bg-card/80 p-3 rounded-lg border border-border inline-block">
-              <span className="text-primary">$</span> whoami <span className="text-accent">→</span> <span className="text-foreground">security_researcher</span>
-              <span className="animate-blink text-primary ml-1">▊</span>
+              <span className="text-primary">$</span> nmap -sV --script vuln <span className="text-accent">target</span>
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center md:justify-start animate-fade-in-up delay-400">
               <a
-                href="#skills"
+                href="#about"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg"
               >
                 <Terminal className="w-4 h-4" />
-                Explore Skills
+                About Me
               </a>
               <a
-                href="#contact"
+                href="/Abdelrhman_Mohamed_CV.pdf"
+                download
                 className="inline-flex items-center gap-2 px-6 py-3 border border-primary/50 text-primary font-semibold rounded-lg hover:bg-primary/10 transition-all duration-300"
               >
-                Get In Touch
+                <Download className="w-4 h-4" />
+                Download CV
               </a>
             </div>
           </div>
