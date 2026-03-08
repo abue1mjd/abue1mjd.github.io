@@ -1,4 +1,4 @@
-import { Code, Smartphone, Globe, Terminal } from "lucide-react";
+import { Code, Smartphone, Globe, Terminal, ExternalLink } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const projects = [
