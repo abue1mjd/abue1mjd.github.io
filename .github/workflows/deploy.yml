@@ -1,0 +1,45 @@
+name: Deploy Lovable React Project to GitHub Pages
+
+# يشغّل على أي push على main
+on:
+  push:
+    branches:
+      - main
+
+# صلاحيات الـ bot للنشر
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ نسخ الريبو
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ تثبيت Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3️⃣ تثبيت Dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ Build المشروع
+      - name: Build project
+        run: npm run build
+
+      # 5️⃣ Deploy على gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist          # مجلد Build من Vite
+          publish_branch: gh-pages     # هينشئ الفرع لو مش موجود
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          force_orphan: true           # لو الفرع مش موجود، هينشئه جديد
