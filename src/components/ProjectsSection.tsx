@@ -67,7 +67,7 @@ const ProjectsSection = () => {
             <span className="font-mono text-sm text-primary tracking-widest uppercase">04. What I've Built</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-3 gradient-text">Projects</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-4 rounded-full" />
-            <p className="text-muted-foreground text-sm mt-4 font-mono">GitHub links coming soon</p>
+            
           </div>
         </ScrollReveal>
 
