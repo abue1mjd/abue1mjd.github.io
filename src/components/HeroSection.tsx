@@ -1,5 +1,4 @@
 import { Shield, Terminal, ChevronDown, Download } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 import profilePhoto from "@/assets/profile-photo.png";
 import TypingEffect from "./TypingEffect";
 
