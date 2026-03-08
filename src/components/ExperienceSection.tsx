@@ -104,7 +104,7 @@ const ExperienceSection = () => {
                 B.Sc. in Computer Science
               </h4>
               <p className="font-mono text-accent mb-2">Faculty of Computers & AI — Beni-Suef University</p>
-              <p className="text-muted-foreground text-sm">2023 – Present • CGPA: 3.09</p>
+              <p className="text-muted-foreground text-sm">2023 – Present</p>
               <p className="text-muted-foreground text-xs mt-3">
                 Coursework: Networks, Web Technologies, Operating Systems, Cybersecurity Fundamentals
               </p>
