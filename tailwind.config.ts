@@ -8,9 +8,7 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       fontFamily: {
@@ -52,11 +50,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        terminal: {
-          green: "hsl(var(--terminal-green))",
-          dim: "hsl(var(--terminal-green-dim))",
-          amber: "hsl(var(--terminal-amber))",
-        },
+        cyan: "hsl(var(--cyan))",
+        violet: "hsl(var(--violet))",
+        rose: "hsl(var(--rose))",
+        amber: "hsl(var(--amber))",
+        emerald: "hsl(var(--emerald))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

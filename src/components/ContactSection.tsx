@@ -1,53 +1,78 @@
-import { Mail, Github, Linkedin, Terminal } from "lucide-react";
+import { Mail, Github, Linkedin, BookOpen, Terminal, Send } from "lucide-react";
+
+const socials = [
+  {
+    label: "LinkedIn",
+    icon: Linkedin,
+    href: "https://linkedin.com/in/abdelrhman-mohamed",
+    color: "hover:border-cyan/50 hover:text-cyan",
+  },
+  {
+    label: "GitHub",
+    icon: Github,
+    href: "https://github.com/abdelrhman-mohamed",
+    color: "hover:border-violet/50 hover:text-violet",
+  },
+  {
+    label: "Medium",
+    icon: BookOpen,
+    href: "https://medium.com/@abdelrhman-mohamed",
+    color: "hover:border-emerald/50 hover:text-emerald",
+  },
+  {
+    label: "Email",
+    icon: Mail,
+    href: "mailto:abdelrhman@example.com",
+    color: "hover:border-rose/50 hover:text-rose",
+  },
+];
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 px-4 bg-card/30">
-      <div className="max-w-2xl mx-auto text-center">
-        <div className="flex items-center justify-center gap-3 mb-2">
-          <span className="font-mono text-primary text-sm">05.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Get In Touch</h2>
-        </div>
-        <div className="w-20 h-0.5 bg-primary mx-auto mb-8" />
+    <section id="contact" className="py-24 px-4 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/30 to-transparent" />
+      <div className="max-w-3xl mx-auto relative text-center">
+        <span className="font-mono text-sm text-primary tracking-widest uppercase">05. Let's Connect</span>
+        <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-4 gradient-text">Get In Touch</h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-4 mb-8 rounded-full" />
 
-        <div className="font-mono text-muted-foreground mb-8 p-6 border border-border bg-card rounded-sm card-glow">
-          <p className="mb-2">
-            <span className="text-primary">$</span> echo "Let's connect"
+        <div className="font-mono text-sm text-muted-foreground mb-12 p-6 bg-card border border-border rounded-lg border-glow-cyan max-w-lg mx-auto">
+          <p className="mb-1">
+            <span className="text-primary">$</span> echo <span className="text-accent">"Let's collaborate"</span>
           </p>
-          <p className="text-foreground text-sm">
-            Interested in cybersecurity collaboration, penetration testing projects, or just want to talk security? Feel free to reach out.
+          <p className="text-foreground">
+            Interested in cybersecurity collaboration, pen testing projects, or security research? Let's talk.
           </p>
         </div>
 
-        <div className="flex justify-center gap-6">
-          <a
-            href="mailto:your@email.com"
-            className="flex items-center gap-2 px-6 py-3 border border-primary text-primary font-mono text-sm rounded-sm hover:bg-primary/10 transition-all duration-200"
-          >
-            <Mail className="w-4 h-4" />
-            Email
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 px-6 py-3 border border-border text-foreground font-mono text-sm rounded-sm hover:border-primary hover:text-primary transition-all duration-200"
-          >
-            <Github className="w-4 h-4" />
-            GitHub
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 px-6 py-3 border border-border text-foreground font-mono text-sm rounded-sm hover:border-primary hover:text-primary transition-all duration-200"
-          >
-            <Linkedin className="w-4 h-4" />
-            LinkedIn
-          </a>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {socials.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex flex-col items-center gap-3 p-6 border border-border bg-card rounded-lg text-muted-foreground transition-all duration-300 card-hover ${social.color}`}
+            >
+              <social.icon className="w-7 h-7" />
+              <span className="font-mono text-sm">{social.label}</span>
+            </a>
+          ))}
         </div>
+
+        <a
+          href="mailto:abdelrhman@example.com"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg text-lg"
+        >
+          <Send className="w-5 h-5" />
+          Say Hello
+        </a>
       </div>
 
       {/* Footer */}
       <div className="mt-20 text-center font-mono text-xs text-muted-foreground">
         <Terminal className="w-4 h-4 inline-block mr-2" />
-        Built with passion for security • {new Date().getFullYear()}
+        Designed & Built by <span className="text-primary">Abdelrhman Mohamed</span> • {new Date().getFullYear()}
       </div>
     </section>
   );
