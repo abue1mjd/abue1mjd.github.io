@@ -74,10 +74,13 @@ const ProjectsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <div className="group p-6 border border-border bg-card rounded-lg card-hover h-full">
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="group p-6 border border-border bg-card rounded-lg card-hover h-full block">
                 <div className="flex items-center justify-between mb-4">
                   <project.icon className={`w-8 h-8 ${project.accent}`} />
-                  <span className="font-mono text-xs text-muted-foreground bg-secondary px-2 py-1 rounded">{project.tech}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-xs text-muted-foreground bg-secondary px-2 py-1 rounded">{project.tech}</span>
+                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </div>
                 </div>
                 <h3 className="font-semibold text-foreground text-lg mb-2 group-hover:text-primary transition-colors">
                   {project.title}
@@ -90,7 +93,7 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </a>
             </ScrollReveal>
           ))}
         </div>
