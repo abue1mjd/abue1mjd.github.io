@@ -1,5 +1,4 @@
 import { Shield, Terminal, ChevronDown, Download } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 import profilePhoto from "@/assets/profile-photo.png";
 import TypingEffect from "./TypingEffect";
 
@@ -8,8 +7,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 scanline pointer-events-none" />
       </div>
