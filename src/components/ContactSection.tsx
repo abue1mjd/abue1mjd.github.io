@@ -1,30 +1,36 @@
-import { Mail, Github, Linkedin, BookOpen, Terminal, Send } from "lucide-react";
+import { Mail, Github, Linkedin, BookOpen, Terminal, Send, Twitter } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const socials = [
   {
     label: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/abdelrhman-mohamed",
+    href: "https://www.linkedin.com/in/abdelrhman-mohamed-a16423299/",
     color: "hover:border-cyan/50 hover:text-cyan",
   },
   {
     label: "GitHub",
     icon: Github,
-    href: "https://github.com/abdelrhman-mohamed",
+    href: "https://github.com/abue1mjd",
     color: "hover:border-violet/50 hover:text-violet",
   },
   {
     label: "Medium",
     icon: BookOpen,
-    href: "https://medium.com/@abdelrhman-mohamed",
+    href: "https://medium.com/@abu.elmjd05",
     color: "hover:border-emerald/50 hover:text-emerald",
+  },
+  {
+    label: "X (Twitter)",
+    icon: Twitter,
+    href: "https://x.com/abue1mjd",
+    color: "hover:border-rose/50 hover:text-rose",
   },
   {
     label: "Email",
     icon: Mail,
     href: "mailto:abdelrhmanmohamed.pentester@gmail.com",
-    color: "hover:border-rose/50 hover:text-rose",
+    color: "hover:border-amber/50 hover:text-amber",
   },
 ];
 
@@ -51,7 +57,7 @@ const ContactSection = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
             {socials.map((social) => (
               <a
                 key={social.label}
