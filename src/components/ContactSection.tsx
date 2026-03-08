@@ -5,7 +5,7 @@ const socials = [
   {
     label: "LinkedIn",
     icon: Linkedin,
-    href: "https://www.linkedin.com/in/abdelrhman-mohamed-a16423299/",
+    href: "https://www.linkedin.com/in/abdelrhman-mohamed-ewais/",
     color: "hover:border-cyan/50 hover:text-cyan",
   },
   {
