@@ -9,6 +9,7 @@ const projects = [
     icon: Terminal,
     tags: ["C++", "OOP", "DSA"],
     accent: "text-cyan",
+    link: "https://github.com/abue1mjd/programming-projects/tree/main/CPP/BankSystm",
   },
   {
     title: "Bank Queue System",
@@ -17,6 +18,7 @@ const projects = [
     icon: Terminal,
     tags: ["C++", "Queue", "DSA"],
     accent: "text-violet",
+    link: "https://github.com/abue1mjd/programming-projects/tree/main/CPP/queue",
   },
   {
     title: "Azkar App",
@@ -25,6 +27,7 @@ const projects = [
     icon: Smartphone,
     tags: ["C#", ".NET", "Desktop"],
     accent: "text-emerald",
+    link: "https://github.com/abue1mjd/programming-projects/tree/main/C%23/AZKAR",
   },
   {
     title: "XO Game",
@@ -33,6 +36,7 @@ const projects = [
     icon: Code,
     tags: ["C#", "Game", "UI"],
     accent: "text-rose",
+    link: "https://github.com/abue1mjd/programming-projects/tree/main/C%23/XO-Game/XO-Game-Final",
   },
   {
     title: "Todo List & CRUD",
@@ -41,6 +45,7 @@ const projects = [
     icon: Globe,
     tags: ["HTML", "CSS", "JavaScript"],
     accent: "text-amber",
+    link: "https://github.com/abue1mjd/programming-projects/tree/main/web/front/TO_DO_LIST",
   },
   {
     title: "Note App",
@@ -49,6 +54,7 @@ const projects = [
     icon: Globe,
     tags: ["PHP", "MySQL", "Full Stack"],
     accent: "text-cyan",
+    link: "https://github.com/abue1mjd/programming-projects/tree/main/web/back/Note_App",
   },
 ];
 
